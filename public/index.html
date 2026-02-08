@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>payaddos</title>
+    <title>ddoskabus</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -15,8 +15,13 @@
         <!-- Header -->
         <header class="header">
             <div class="header-content">
-                <h1 class="glitch" data-text="payaddos">payaddos</h1>
-               
+                <h1 class="glitch" data-text="ddoskabus">ddoskabus</h1>
+                
+                <div class="status-bar">
+                    <span class="status online"><i class="fas fa-signal"></i> CONNECTED</span>
+                    <span class="status users"><i class="fas fa-users"></i> USERS: <span id="userCount">1</span></span>
+                    <span class="status attacks"><i class="fas fa-crosshairs"></i> ACTIVE: <span id="activeAttackCount">0</span></span>
+                </div>
             </div>
         </header>
 
@@ -36,7 +41,7 @@
                         <label for="targetUrl"><i class="fas fa-bullseye"></i> TARGET URL</label>
                         <div class="input-with-icon">
                             <i class="fas fa-link"></i>
-                            <input type="text" id="targetUrl" placeholder="https://target.com" value="http://">
+                            <input type="text" id="targetUrl" placeholder="http://target.com" value="http://">
                         </div>
                     </div>
 
@@ -68,14 +73,15 @@
 
                     <div class="button-grid">
                         <button id="startBtn" class="btn btn-attack pulse">
-                            <i class="fas fa-play"></i> LAUNCH ATTACK
+                            <i class="fas fa-play"></i>  ATTACK
                         </button>
                         <button id="stopBtn" class="btn btn-stop" disabled>
-                            <i class="fas fa-stop"></i> ABORT
+                            <i class="fas fa-stop"></i> stop
                         </button>
-                        <button id="stopAllBtn" class="btn btn-warning">
-                            <i class="fas fa-skull-crossbones"></i> KILL ALL
+                         <button id="stopAllBtn" class="btn btn-warning">
+                            <i class="fas fa-skull-crossbones"></i> KILL 
                         </button>
+                       
                     </div>
 
                     <div class="quick-stats">
@@ -180,12 +186,52 @@
                 </div>
             </section>
 
-           
+            <!-- System Terminal -->
+            <section class="panel terminal-panel">
+                <div class="panel-header">
+                    <h2><i class="fas fa-code"></i>TERMINAL</h2>
+                    <div class="panel-actions">
+                        <button id="clearLogsBtn" class="btn-small"><i class="fas fa-trash"></i></button>
+                        <button id="exportLogsBtn" class="btn-small"><i class="fas fa-download"></i></button>
+                    </div>
+                </div>
+                
+                <div class="panel-content">
+                    <div class="terminal">
+                        <div class="terminal-header">
+                            <div class="terminal-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <div class="terminal-title">termenall</div>
+                        </div>
+                        <div class="terminal-content" id="terminalContent">
+                            <div class="terminal-line">
+                                <span class="prompt">root@paya:~#</span>
+                                <span class="command">system.init()</span>
+                          
+                            <div class="terminal-line">
+                                <span class="prompt">root@paya:~#</span>
+                                <span class="blink-cursor">_</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="terminal-input">
+                        <div class="input-group">
+                            <span class="input-prefix">$</span>
+                            <input type="text" id="terminalInput" placeholder="Type commands...">
+                            <button id="sendCommand" class="btn-small"><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             <!-- System Info -->
             <section class="panel system-info">
                 <div class="panel-header">
-                    <h2><i class="fas fa-server"></i> SYSTEM STATUS</h2>
+                    <h2><i class="fas fa-server"></i>  STATUS</h2>
                     <div class="panel-actions">
                         <div class="ping-indicator">
                             <i class="fas fa-circle"></i>
@@ -263,7 +309,7 @@
     <div id="connectionModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2><i class="fas fa-plug"></i> CONNECTION ESTABLISHED</h2>
+                <h2><i class="fas fa-plug"></i> SERVER RUN </h2>
             </div>
             <div class="modal-body">
                 <div class="connection-animation">
@@ -277,10 +323,10 @@
                         <span>SERVER</span>
                     </div>
                 </div>
-                <p class="connection-message">SECURE WEBSOCKET CONNECTION ACTIVE</p>
+                <p class="connection-message"> CONNECTION ACTIVE</p>
                 <div class="connection-details">
                     <p><i class="fas fa-id-card"></i> USER ID: <span id="modalUserId">...</span></p>
-                    <p><i class="fas fa-shield-alt"></i> SESSION: ENCRYPTED</p>
+                    
                     <p><i class="fas fa-bolt"></i> MAX THREADS: 500</p>
                 </div>
             </div>
